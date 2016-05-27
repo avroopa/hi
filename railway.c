@@ -6,6 +6,11 @@ struct air
   int ticketno;
 
   }s;
+  void menu();
+  void view();
+  void cancel();
+  void reserve();
+  
 void menu()
 { int ch;
 printf("\n\n1.VIEW ALL TRAINS");
@@ -15,15 +20,13 @@ printf("\nEnter your choice(1,2 or 3)");
 scanf("%d",&ch);
 switch(ch)
 { case 1: view();
-   getch();
    menu();
    break;
   case 2: reserve();
-    getch();
     menu();
     break;
   case 3: cancel();
-  getch();
+  
   menu();
   break;
   default:printf("\nenter a valid choice");
@@ -37,7 +40,7 @@ void view()
   printf("\n1987 Delhi to Banglore               18:00      ");
   printf("\n1576 Delhi to chennai                20:00      ");
 
-  getch();
+  
 
 }
 void reserve()
@@ -88,7 +91,7 @@ void reserve()
   printf("Number of tickets");
   scanf("%d",&s.ticketno);
  printf("Your ticket is confirmed");
- getch();
+ 
  printf("\nHere is your ticket\n");
  printf("-----------------------------------------------------------------------------------------------\n");
  printf("                             APOORVA'S RAILWAY NETWORK                                        \n");
@@ -113,18 +116,18 @@ printf("enter the ticket no");
 scanf("%d",&ticket);
  if(ticket==s.ticketno)
   {    printf("your ticket is cancelled");
-   getch();
+
    }
  else
  {printf("ticket no is invalid");
-  getch();
+  
  menu();
 }}
 void main(){
 	printf("***********************************************************");
 	printf("\n         Welcome to Apoorva's Railway Network              ");
 	printf("\n***********************************************************");
-	 getch();
+	
  menu();
 }
 
