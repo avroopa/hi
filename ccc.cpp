@@ -4,16 +4,29 @@
 #include<fstream>
 #include<iomanip>
 using namespace std;
-
+void entry_menu();
+void result();
+void class_result();
+void delete_student();
+void modify_student();
+void display_sp(int n);
+void display_all();
+void write_student();
+int  retid();
+void show_tabular();
+void showdata();
+void calculate();
+void getdata();
+int id;
+char name[50];
+int phno;
+char address[50];
+int tickets;
+int code,total_seats=100,reserved=0,cl,no=0,cost;
+int i =0;
 class student
 {
-	int id;
-	char name[50];
-	int phno;
-	char address[50];
-	int tickets;
-	int code,total_seats=100,reserved=0,cl,no=0,cost;
-	int i =0;
+	
 	void calculate()
 	{
   if(reserved<total_seats)
@@ -89,21 +102,9 @@ cout<<(" Tickets Cost: %d                                                       
 	int  retid()
 	{	return id;	}
 
-};         //class ends here
-
-
-
-//***************************************************************
-//    	global declaration for stream object, object
-//****************************************************************
-
+};         
  fstream fp;
  student st;
-
-//***************************************************************
-//    	function to write in file
-//****************************************************************
-
 void write_student()
 {
 	fp.open("student.dat",ios::out|ios::app);
@@ -113,12 +114,6 @@ void write_student()
 	cout<<"\n\nYour Data Has been saved ";
 	
 }
-
-//***************************************************************
-//    	function to read all records from file
-//****************************************************************
-
-
 void display_all()
 {
 	
@@ -133,13 +128,6 @@ void display_all()
     	fp.close();
     	
 }
-
-
-//***************************************************************
-//    	function to read specific record from file
-//****************************************************************
-
-
 void display_sp(int n)
 {
 	int flag=0;
@@ -158,13 +146,6 @@ void display_sp(int n)
 		cout<<"\n\nrecord does not exist";
 
 }
-
-
-//***************************************************************
-//    	function to modify record of file
-//****************************************************************
-
-
 void modify_student()
 {
 	int no,found=0;
@@ -180,7 +161,7 @@ void modify_student()
 			st.showdata();
 			cout<<"\nPlease Enter The New Details"<<endl;
 			st.getdata();
-			int pos=-1 * sizeof(st);
+			int pos = (-1) * (sizeof(st));
 			fp.seekp(pos,ios::cur);
 			fp.write((char*)&st,sizeof(student));
 			cout<<"\n\n\t Record Updated";
@@ -190,14 +171,6 @@ void modify_student()
     	fp.close();
     	if(found==0)
     		cout<<"\n\n Record Not Found ";}
-    	
-
-
-//***************************************************************
-//    	function to delete record of file
-//****************************************************************
-
-
 void delete_student()
 {
 	int no;
@@ -223,12 +196,6 @@ void delete_student()
     	cout<<"\n\n\tRecord Deleted ..";
     	
 }
-
-
-//***************************************************************
-//    	function to display all students grade report
-//****************************************************************
-
 void class_result()
 {
 	
@@ -251,17 +218,12 @@ void class_result()
      	fp.close();
      	
 }
-
-//***************************************************************
-//    	function to display result menu
-//****************************************************************
-
 void result()
 {
 	int ans,rno;
     	char ch;
     	
-    	cout<<"\n\n\nRESULT MENU";
+    	cout<<"\n\n\nBOOKING MENU";
     	cout<<"\n\n\n1. View all bookings\n\n2. View your Ticket\n\n3.Back to Main Menu";
     	cout<<"\n\n\nEnter Choice (1/2)? ";
     	cin>>ans;
@@ -279,13 +241,6 @@ void result()
      		default:  cout<<"\a";
  	   	}
  }
-
-
-
-
-//***************************************************************
-//    	ENTRY / EDIT MENU FUNCTION
-//****************************************************************
 void entry_menu()
 {
   	
@@ -310,13 +265,6 @@ void entry_menu()
       		default:cout<<"\a";entry_menu();
    	}
 }
-
-
-//***************************************************************
-//    	THE MAIN FUNCTION OF PROGRAM
-//****************************************************************
-
-
 int main()
 {
   	char ch;
