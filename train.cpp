@@ -7,10 +7,10 @@ using namespace std;
 void entry_menu(); void result();
 void class_result(); void delete_student();
 void modify_student(); void display_sp(int n);
-void display_all(); void write_student();
+void write_student();
 int  retid(); void show_tabular();
 void showdata(); void calculate();
-void getdata(); int id;
+void getdata(); int id = 1;
 char name[50]; int phno;
 char address[50]; int tickets;
 int code,total_seats=100,reserved=0,cl,no=0,cost;
@@ -57,9 +57,8 @@ class student
 showdata();}
  public:
 	void getdata()
-	{
-		id == i;
-		i++;
+	{    cout<<"enter your id "; 
+		cin>>id;
 		cout<<"\n\nEnter your Name";
 		cin>>name;
 		cout<<"\nEnter your phone number : ";
@@ -84,6 +83,7 @@ showdata();}
  cout<<" Tickets Cost: "<<cost<<endl;
  cout<<"                               HAVE A NICE JOURNEY!                                          \n";
  cout<<"-----------------------------------------------------------------------------------------------\n";
+ 
 	}
 
 	void show_tabular()
@@ -106,20 +106,7 @@ void write_student()
 	cout<<"\n\nYour Data Has been saved ";
 	
 }
-void display_all()
-{
-	
-	cout<<"\n\n\n\t\tDISPLAY ALL RECORDS\n\n";
-	fp.open("student.dat",ios::in);
-	while(fp.read((char*)&st,sizeof(student)))
-	{
-		st.showdata();
-		cout<<"\n\n====================================\n";
-	 	
-	}
-    	fp.close();
-    	
-}
+
 void display_sp(int n)
 {
 	int flag=0;
@@ -239,10 +226,9 @@ void entry_menu()
   	char ch2;
   	cout<<"\n\n\n\tENTRY MENU";
   	cout<<"\n\n\t1.CREATE  RECORD";
-  	cout<<"\n\n\t2. VIEW ALL RECORDS";
-  	cout<<"\n\n\t3.MODIFY YOUR RECORD";
-  	cout<<"\n\n\t4.DELETE YOUR RECORD";
-  	cout<<"\n\n\t5.BACK TO MAIN MENU";
+  	cout<<"\n\n\t2.MODIFY YOUR RECORD";
+  	cout<<"\n\n\t3.DELETE YOUR RECORD";
+  	cout<<"\n\n\t4.BACK TO MAIN MENU";
   	cout<<"\n\n\tPlease Enter Your Choice (1-6) ";
   	cin>>ch2;
   	switch(ch2)
@@ -250,10 +236,9 @@ void entry_menu()
     		case '1': 
 	      		write_student();
 	      		break;
-    		case '2': display_all();break;
-      		case '3': modify_student();break;
-      		case '4': delete_student();break;
-      		case '5': break;
+      		case '2': modify_student();break;
+      		case '3': delete_student();break;
+      		case '4': break;
       		default:cout<<"\a";entry_menu();
    	}
 }
