@@ -1,6 +1,5 @@
 #include<iostream>
 #include<stdio.h>
-#include<process.h>
 #include<fstream>
 #include<iomanip>
 using namespace std;
@@ -161,7 +160,7 @@ void modify_student()
 			st.showdata();
 			cout<<"\nPlease Enter The New Details"<<endl;
 			st.getdata();
-			int pos = (-1) * (sizeof(st));
+			int pos = static_cast<int>(-1 * sizeof(st));
 			fp.seekp(pos,ios::cur);
 			fp.write((char*)&st,sizeof(student));
 			cout<<"\n\n\t Record Updated";
