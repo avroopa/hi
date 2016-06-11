@@ -53,7 +53,8 @@ class student
        {
 	     printf("\nEnter valid choice(1,2or 3)");
        }
-	}}}
+	}}
+showdata();}
  public:
 	void getdata()
 	{
@@ -73,16 +74,16 @@ class student
 	void showdata()
 	{
 		cout<<("\nHere is your ticket\n");
- cout<<("-----------------------------------------------------------------------------------------------\n");
- cout<<("                             APOORVA'S RAILWAY NETWORK                                        \n");
- cout<<("ID: %d                                                                                         \n",id);
- cout<<(" Name: %c                                                                                     \n",name);
- cout<<(" Phone Number: %d                                                                             \n",phno);
- cout<<(" Address: %c                                                                                  \n",address);                   
- cout<<(" Tickets Booked: %d                                                                           \n",tickets);
-cout<<(" Tickets Cost: %d                                                                           \n",cost);
- cout<<("                               HAVE A NICE JOURNEY!                                          \n");
- cout<<("-----------------------------------------------------------------------------------------------\n");
+ cout<<"-----------------------------------------------------------------------------------------------\n";
+ cout<<"                             APOORVA'S RAILWAY NETWORK                                        \n";
+ cout<<" ID : "<<id<<endl;
+ cout<<" Name: "<<name<<endl;
+ cout<<" Phone Number: "<<phno<<endl;
+ cout<<" Address: "<<address<<endl;                   
+ cout<<" Tickets Booked: "<<tickets<<endl;
+ cout<<" Tickets Cost: "<<cost<<endl;
+ cout<<"                               HAVE A NICE JOURNEY!                                          \n";
+ cout<<"-----------------------------------------------------------------------------------------------\n";
 	}
 
 	void show_tabular()
